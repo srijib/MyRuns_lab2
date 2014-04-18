@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Account Preferences" >
+
+        <PreferenceScreen
+            android:summary="Names, Email, Class, etc"
+            android:title="User Profile" >
+
+            <intent
+                android:targetClass="edu.dartmouth.cs.myruns_lab2.ProfileActivity"
+                android:targetPackage="edu.dartmouth.cs.myruns_lab2" />
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+            android:key="privacy_setting"
+            android:summary="Posting your records anonymously"
+            android:title="Privacy setting" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Additional Settings" >
+
+        <ListPreference
+            android:dialogTitle="Unit Preference"
+            android:entries="@array/entries_list_preference"
+            android:entryValues="@array/entryvalues_list_preference"
+            android:key="unit_preference"
+            android:summary="Select the units in which you would like to
+                 see distance values"
+            android:title="Unit Preference" />
+
+        <EditTextPreference
+            android:dialogTitle="Comment"
+            android:key="comment_preference"
+            android:summary="Any Suggestion to this course"
+            android:title="Comment" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Misc." >
+                <PreferenceScreen
+                android:title="Class Homepage"
+                android:summary="http://www.cs.dartmouth.edu/~campbell">
+
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="http://www.cs.dartmouth.edu/~campbell/cs65/cs65.html" />
+
+        </PreferenceScreen>
+        
+        </PreferenceCategory>
+
+</PreferenceScreen>
